@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "build": "^0.1.4",
     "canvas": "^2.11.2",
     "fileupload": "^1.0.0",
     "formidable": "^3.4.0",
