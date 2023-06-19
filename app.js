@@ -55,9 +55,12 @@ const server = http.createServer((req, res) => {
 
             ctx.drawImage(image, 0, 0);
 
-            const watermarkX = (image.width - watermark.width) / 2; // Center horizontally
+            const watermarkWidth = 200; // Define the width of the watermark
+            const watermarkHeight = (watermarkWidth / watermark.width) * watermark.height; // Maintain the aspect ratio based on the width
+            const watermarkX = (image.width - watermarkWidth) / 2; // Center horizontally
             const watermarkY = 20; // 20px padding from the top
-            ctx.drawImage(watermark, watermarkX, watermarkY);
+
+            ctx.drawImage(watermark, watermarkX, watermarkY, watermarkWidth, watermarkHeight);
 
             const mergedImageURL = canvas.toDataURL('image/jpeg');
 
